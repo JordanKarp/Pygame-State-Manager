@@ -6,8 +6,10 @@ class State:
         self.next_state = None
         self.persist = {}
 
-    def startup(self, persistent={}):
+    def startup(self, persistent=None):
         """Upon state startup"""
+        if persistent is None:
+            persistent = {}
         self.next_state = self
         self.persist = persistent
 
